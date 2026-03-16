@@ -40,19 +40,7 @@ export default function Home() {
         style={{ background: 'rgba(240,237,232,0.06)' }}
       />
 
-      {/* Scroll indicator */}
-      <div className="anim-scroll fixed bottom-0 right-10 md:right-16 flex flex-col items-center gap-3 z-50 pb-0">
-        <span
-          className="text-[8px] tracking-[0.3em] uppercase"
-          style={{ color: 'rgba(240,237,232,0.3)', writingMode: 'vertical-rl' }}
-        >
-          Scroll
-        </span>
-        <div
-          className="scroll-pulse w-px h-20"
-          style={{ background: 'linear-gradient(to bottom, #c8a97e, transparent)' }}
-        />
-      </div>
+
     </main>
   )
 }

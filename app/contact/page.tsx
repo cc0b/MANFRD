@@ -22,6 +22,13 @@ export default function ContactPage() {
           Contact
         </h1>
 
+        <p
+          className="anim-fade-up-2 mt-4 text-[11px] tracking-[0.25em] uppercase"
+          style={{ color: 'rgba(240,237,232,0.35)' }}
+        >
+          Based in Germany &mdash; Available across Europe &amp; the UK
+        </p>
+
         <div className="anim-fade-up-3 mt-10 flex flex-col gap-4">
           {/* Replace these with real details */}
           <a
