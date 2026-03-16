@@ -22,6 +22,16 @@ export const metadata: Metadata = {
   icons: {
     icon: '/Manfrd Logo_Mark_White_HR.png',
   },
+  openGraph: {
+    title: 'MANFRD',
+    description: 'Cinematographer · Composer · Choreographer',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MANFRD',
+    description: 'Cinematographer · Composer · Choreographer',
+  },
 }
 
 export default function RootLayout({
