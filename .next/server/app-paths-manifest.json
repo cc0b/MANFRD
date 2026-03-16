@@ -1,7 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/composition/page": "app/composition/page.js",
-  "/choreography/page": "app/choreography/page.js",
-  "/cinematography/page": "app/cinematography/page.js",
-  "/contact/page": "app/contact/page.js"
-}

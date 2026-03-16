@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/calebli/Desktop/projectstemp/manfrd/app/layout\":[\"static/media/69e678db87bce273-s.p.woff2\",\"static/media/7b89a4fd5e90ede0-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
