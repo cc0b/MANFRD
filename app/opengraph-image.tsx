@@ -1,11 +1,15 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
-export const runtime = 'edge'
 export const alt = 'MANFRD — Cinematographer · Composer · Choreographer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default function Image() {
+  const logoBuffer = readFileSync(join(process.cwd(), 'public', 'Manfrd Logo_Wordmark_White_HR.png'))
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -15,50 +19,24 @@ export default function Image() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-end',
-          padding: '80px 96px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 32,
         }}
       >
-        {/* Accent line */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoSrc} width={520} alt="MANFRD" />
         <div
           style={{
             color: '#c8a97e',
-            fontSize: 13,
+            fontSize: 14,
             letterSpacing: '0.4em',
             textTransform: 'uppercase',
             fontFamily: 'sans-serif',
-            marginBottom: 28,
           }}
         >
           Cinematographer · Composer · Choreographer
         </div>
-
-        {/* Wordmark */}
-        <div
-          style={{
-            color: '#f0ede8',
-            fontSize: 140,
-            letterSpacing: '0.12em',
-            fontWeight: 700,
-            fontFamily: 'sans-serif',
-            lineHeight: 1,
-          }}
-        >
-          MANFRD
-        </div>
-
-        {/* Thin rule */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 60,
-            left: 96,
-            right: 96,
-            height: 1,
-            background: 'rgba(240,237,232,0.08)',
-          }}
-        />
       </div>
     ),
     { ...size }
