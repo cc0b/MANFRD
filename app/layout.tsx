@@ -31,13 +31,11 @@ export const metadata: Metadata = {
     title: 'MANFRD',
     description: 'Cinematographer · Composer · Choreographer',
     type: 'website',
-    images: [{ url: '/og.png', width: 2843, height: 655, alt: 'MANFRD' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MANFRD',
     description: 'Cinematographer · Composer · Choreographer',
-    images: ['/og.png'],
   },
 }
 
