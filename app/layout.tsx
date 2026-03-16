@@ -17,11 +17,7 @@ const archivo = Archivo({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000'
-  ),
+  metadataBase: new URL('https://manfrd.vercel.app'),
   title: 'MANFRD',
   description: 'Cinematographer · Composer · Choreographer',
   icons: {
