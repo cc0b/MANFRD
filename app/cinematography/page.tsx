@@ -27,7 +27,7 @@ export default function CinematographyPage() {
         <ScrollIndicator />
 
         {/* Page header */}
-        <div className="pt-36 px-10 md:px-16 mb-14">
+        <div className="pt-24 md:pt-36 px-8 md:px-16 mb-10 md:mb-14">
           <p className="anim-fade-up-1 text-accent text-[9px] tracking-[0.4em] uppercase mb-4">
             Selected works — Visual storytelling
           </p>
@@ -40,7 +40,7 @@ export default function CinematographyPage() {
         </div>
 
         {/* Film list */}
-        <div className="px-10 md:px-16 pb-24 flex flex-col gap-16">
+        <div className="px-8 md:px-16 pb-24 flex flex-col gap-16">
           {films.map(film => (
             <div key={film.id} className="anim-fade-up-3">
               {/* 16:9 responsive embed */}
@@ -79,7 +79,7 @@ export default function CinematographyPage() {
         </div>
 
         {/* Get in touch */}
-        <div className="px-10 md:px-16 pb-20">
+        <div className="px-8 md:px-16 pb-20">
           <Link
             href="/contact"
             className="inline-flex items-center gap-3 text-[9px] tracking-[0.3em] uppercase no-underline transition-colors duration-300 group"

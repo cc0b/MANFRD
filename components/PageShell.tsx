@@ -18,7 +18,7 @@ export default function PageShell({
 
       <Navbar />
 
-      <div className="relative z-10 h-screen flex flex-col justify-end px-10 md:px-16 pb-20">
+      <div className="relative z-10 h-screen flex flex-col justify-end px-8 md:px-16 pb-16 md:pb-20">
         {/* Page label */}
         <p className="anim-fade-up-1 text-accent text-[9px] tracking-[0.4em] uppercase mb-6">
           {subtitle}

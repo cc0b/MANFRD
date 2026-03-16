@@ -14,7 +14,7 @@ export default function SidebarTabs() {
 
   return (
     <div
-      className="anim-fade-right fixed left-10 md:left-16 z-50 flex flex-col gap-8"
+      className="anim-fade-right fixed left-10 md:left-16 z-50 hidden md:flex flex-col gap-8"
       style={{ top: '50%' }}
     >
       {tabs.map(({ label, href }) => {
