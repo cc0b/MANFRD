@@ -95,7 +95,13 @@ export default function ContactForm() {
 
       {/* Submit row */}
       <div className="flex items-center justify-between pt-2">
-        <span className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(240,237,232,0.2)' }}>
+        <span
+          className="tracking-[0.25em] uppercase transition-all duration-300"
+          style={{
+            color: status === 'sent' ? 'rgba(240,237,232,0.7)' : 'rgba(240,237,232,0.2)',
+            fontSize: status === 'sent' ? '13px' : status === 'error' ? '11px' : '9px',
+          }}
+        >
           {status === 'sent'
             ? "Message received — I'll be in touch."
             : status === 'error'
