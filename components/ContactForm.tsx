@@ -3,11 +3,15 @@
 import { useState, useRef } from 'react'
 import { sendEmail } from '@/app/actions/sendEmail'
 
-const inputClass = `w-full bg-transparent border-b py-3 text-[11px] tracking-[0.2em] uppercase outline-none transition-colors duration-300 placeholder:tracking-[0.2em] placeholder:uppercase focus:border-cream`
+const labelClass = `block text-[9px] tracking-[0.35em] uppercase mb-2`
+const inputClass = `w-full bg-transparent border-b py-2.5 text-[12px] tracking-[0.15em] outline-none transition-colors duration-300`
+
+const labelStyle = { color: 'rgba(240,237,232,0.35)' }
 const inputStyle = {
-  borderColor: 'rgba(240,237,232,0.2)',
-  color: 'rgba(240,237,232,0.8)',
+  borderColor: 'rgba(240,237,232,0.15)',
+  color: 'rgba(240,237,232,0.85)',
 }
+const inputFocusClass = `focus:border-cream`
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -29,66 +33,86 @@ export default function ContactForm() {
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-6 w-full max-w-lg">
-      <input
-        name="name"
-        type="text"
-        placeholder="Name"
-        required
-        className={inputClass}
-        style={inputStyle}
-      />
+    <form ref={formRef} onSubmit={handleSubmit} className="w-full flex flex-col gap-8">
 
-      <input
-        name="contact"
-        type="text"
-        placeholder="Email or Phone"
-        required
-        className={inputClass}
-        style={inputStyle}
-      />
+      {/* Row 1: Name + Contact */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div>
+          <label className={labelClass} style={labelStyle}>Name</label>
+          <input
+            name="name"
+            type="text"
+            required
+            placeholder="—"
+            className={`${inputClass} ${inputFocusClass}`}
+            style={inputStyle}
+          />
+        </div>
+        <div>
+          <label className={labelClass} style={labelStyle}>Email or Phone</label>
+          <input
+            name="contact"
+            type="text"
+            required
+            placeholder="—"
+            className={`${inputClass} ${inputFocusClass}`}
+            style={inputStyle}
+          />
+        </div>
+      </div>
 
-      <select
-        name="service"
-        required
-        className={inputClass}
-        style={{ ...inputStyle, backgroundColor: 'transparent' }}
-        defaultValue=""
-      >
-        <option value="" disabled style={{ background: '#0a0a0a' }}>Service</option>
-        <option value="Cinematography" style={{ background: '#0a0a0a' }}>Cinematography</option>
-        <option value="Composition" style={{ background: '#0a0a0a' }}>Composition</option>
-        <option value="Choreography" style={{ background: '#0a0a0a' }}>Choreography</option>
-        <option value="Multiple Services" style={{ background: '#0a0a0a' }}>Multiple Services</option>
-        <option value="Other" style={{ background: '#0a0a0a' }}>Other</option>
-      </select>
+      {/* Row 2: Service */}
+      <div>
+        <label className={labelClass} style={labelStyle}>Service</label>
+        <select
+          name="service"
+          required
+          defaultValue=""
+          className={`${inputClass} ${inputFocusClass}`}
+          style={{ ...inputStyle, backgroundColor: 'transparent' }}
+        >
+          <option value="" disabled style={{ background: '#0a0a0a' }}>Select a service</option>
+          <option value="Cinematography" style={{ background: '#0a0a0a' }}>Cinematography</option>
+          <option value="Composition" style={{ background: '#0a0a0a' }}>Composition</option>
+          <option value="Choreography" style={{ background: '#0a0a0a' }}>Choreography</option>
+          <option value="Multiple Services" style={{ background: '#0a0a0a' }}>Multiple Services</option>
+          <option value="Other" style={{ background: '#0a0a0a' }}>Other</option>
+        </select>
+      </div>
 
-      <textarea
-        name="message"
-        placeholder="Message"
-        required
-        rows={4}
-        className={`${inputClass} resize-none`}
-        style={inputStyle}
-      />
+      {/* Row 3: Message */}
+      <div>
+        <label className={labelClass} style={labelStyle}>Message</label>
+        <textarea
+          name="message"
+          required
+          placeholder="—"
+          rows={5}
+          className={`${inputClass} ${inputFocusClass} resize-none`}
+          style={inputStyle}
+        />
+      </div>
 
-      <button
-        type="submit"
-        disabled={status === 'sending' || status === 'sent'}
-        className="self-start text-[10px] tracking-[0.35em] uppercase transition-colors duration-300 hover:text-cream disabled:opacity-40"
-        style={{ color: 'rgba(240,237,232,0.5)' }}
-      >
-        {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent' : 'Send Message'}
-      </button>
+      {/* Submit row */}
+      <div className="flex items-center justify-between pt-2">
+        <span className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(240,237,232,0.2)' }}>
+          {status === 'sent'
+            ? "Message received — I'll be in touch."
+            : status === 'error'
+            ? errorMsg
+            : 'All fields required'}
+        </span>
 
-      {status === 'sent' && (
-        <p className="text-[10px] tracking-[0.25em] uppercase" style={{ color: 'rgba(240,237,232,0.4)' }}>
-          Message received — I'll be in touch.
-        </p>
-      )}
-      {status === 'error' && (
-        <p className="text-[10px] tracking-[0.25em] uppercase text-red-400">{errorMsg}</p>
-      )}
+        <button
+          type="submit"
+          disabled={status === 'sending' || status === 'sent'}
+          className="border px-8 py-3 text-[10px] tracking-[0.35em] uppercase transition-colors duration-300 hover:border-cream hover:text-cream disabled:opacity-40"
+          style={{ borderColor: 'rgba(240,237,232,0.25)', color: 'rgba(240,237,232,0.6)' }}
+        >
+          {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent' : 'Send'}
+        </button>
+      </div>
+
     </form>
   )
 }
