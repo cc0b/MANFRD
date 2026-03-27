@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="anim-fade-down fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 md:px-16 py-8 md:py-10">
+      <nav className="anim-fade-down fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 md:px-16 py-8 md:py-10" style={{ background: 'linear-gradient(to bottom, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0) 100%)' }}>
         <Link href="/" className="no-underline" onClick={() => setOpen(false)}>
           <Image
             src="/Manfrd Logo_Wordmark_Black_HR.png"
