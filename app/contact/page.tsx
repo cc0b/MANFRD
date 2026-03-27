@@ -57,6 +57,9 @@ export default function ContactPage() {
 
         {/* Right — form */}
         <div className="anim-fade-up-3 flex-1 w-full">
+          <p className="text-[9px] tracking-[0.4em] uppercase mb-6" style={{ color: '#c8a97e' }}>
+            Contact Form
+          </p>
           <ContactForm />
         </div>
 
