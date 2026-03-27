@@ -10,15 +10,17 @@ export default function CompositionPage() {
         href="https://soundcloud.com/manfrd"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 text-[9px] tracking-[0.3em] uppercase no-underline transition-colors duration-300 group"
-        style={{ color: 'rgba(240,237,232,0.4)' }}
+        className="inline-flex items-center gap-4 no-underline transition-all duration-300 group border px-8 py-5 self-start"
+        style={{ borderColor: 'rgba(200,169,126,0.4)', color: '#c8a97e' }}
       >
-        <span
-          className="w-8 h-px transition-all duration-300 group-hover:w-14"
-          style={{ background: '#c8a97e' }}
-        />
-        <span className="group-hover:text-cream transition-colors duration-300">
+        <span className="text-[11px] tracking-[0.3em] uppercase group-hover:text-cream transition-colors duration-300">
           Listen on SoundCloud
+        </span>
+        <span
+          className="text-lg transition-transform duration-300 group-hover:translate-x-1"
+          style={{ color: '#c8a97e' }}
+        >
+          →
         </span>
       </a>
 
