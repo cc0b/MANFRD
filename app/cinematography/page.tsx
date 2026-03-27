@@ -15,6 +15,16 @@ const films = [
     title: '',
     subtitle: '',
   },
+  {
+    id: 'jZuHVIi_9EU',
+    title: '',
+    subtitle: '',
+  },
+  {
+    id: 'blRL0obsQ98',
+    title: '',
+    subtitle: '',
+  },
 ]
 
 export default function CinematographyPage() {
@@ -40,7 +50,7 @@ export default function CinematographyPage() {
         </div>
 
         {/* Film list */}
-        <div className="px-8 md:px-16 pb-24 flex flex-col gap-16">
+        <div className="px-8 md:px-16 pb-24 grid grid-cols-1 md:grid-cols-2 gap-10">
           {films.map(film => (
             <div key={film.id} className="anim-fade-up-3">
               {/* 16:9 responsive embed */}

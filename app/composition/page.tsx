@@ -5,13 +5,23 @@ export const metadata = { title: 'MANFRD — Composition' }
 export default function CompositionPage() {
   return (
     <PageShell title="Composition" subtitle="Selected works — Original scores & sound">
-      {/* Add your audio embeds / tracks here */}
-      <p
-        className="text-[11px] tracking-[0.15em] leading-relaxed"
-        style={{ color: 'rgba(240,237,232,0.35)' }}
+
+      <a
+        href="https://soundcloud.com/manfrd"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-3 text-[9px] tracking-[0.3em] uppercase no-underline transition-colors duration-300 group"
+        style={{ color: 'rgba(240,237,232,0.4)' }}
       >
-        put music stuff here temp placeholderrrrr.
-      </p>
+        <span
+          className="w-8 h-px transition-all duration-300 group-hover:w-14"
+          style={{ background: '#c8a97e' }}
+        />
+        <span className="group-hover:text-cream transition-colors duration-300">
+          Listen on SoundCloud
+        </span>
+      </a>
+
     </PageShell>
   )
 }
