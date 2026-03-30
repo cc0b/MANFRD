@@ -36,6 +36,7 @@ export default function ContactPage() {
 
           {/* Links — wrap on very small screens */}
           <div className="anim-fade-up-3 mt-6 md:mt-10 flex flex-wrap gap-3">
+
             <a
               href="mailto:contact@manfrd.co.nz"
               className="border px-4 md:px-6 py-3 text-[10px] md:text-[11px] tracking-[0.2em] md:tracking-[0.25em] uppercase no-underline transition-colors duration-300 hover:border-cream hover:text-cream"
