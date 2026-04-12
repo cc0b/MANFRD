@@ -72,9 +72,9 @@ export default function ContactForm() {
           style={{ ...inputStyle, backgroundColor: 'transparent' }}
         >
           <option value="" disabled style={{ background: '#0a0a0a' }}>Select a service</option>
-          <option value="Cinematography" style={{ background: '#0a0a0a' }}>Cinematography</option>
-          <option value="Composition" style={{ background: '#0a0a0a' }}>Composition</option>
-          <option value="Choreography" style={{ background: '#0a0a0a' }}>Choreography</option>
+          <option value="Film" style={{ background: '#0a0a0a' }}>Film</option>
+          <option value="Music" style={{ background: '#0a0a0a' }}>Music</option>
+          <option value="Dance" style={{ background: '#0a0a0a' }}>Dance</option>
           <option value="Multiple Services" style={{ background: '#0a0a0a' }}>Multiple Services</option>
           <option value="Other" style={{ background: '#0a0a0a' }}>Other</option>
         </select>
